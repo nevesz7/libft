@@ -1,36 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_utils.c                              :+:      :+:    :+:   */
+/*   ft_strisdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rarobert <rarobert@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/04 19:40:27 by rarobert          #+#    #+#             */
-/*   Updated: 2022/10/20 15:45:18 by rarobert         ###   ########.fr       */
+/*   Created: 2022/11/25 03:50:30 by rarobert          #+#    #+#             */
+/*   Updated: 2022/11/25 11:57:03 by rarobert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	get_next_char(int fd)
+int	ft_strisdigit(const char *str)
 {
-	ssize_t	x;
-	char	c;
-
-	c = 0;
-	x = read(fd, &c, 1);
-	if (x > 0)
-		return (c);
-	return (0);
-}
-
-t_list_gnl	*ft_lstnew_gnl(void)
-{
-	t_list_gnl	*node;
-
-	node = (t_list_gnl *)malloc(sizeof(t_list_gnl));
-	if (!node)
-		return (NULL);
-	node->next = NULL;
-	return (node);
+	if (*str == '+' || *str == '-')
+		str++;
+	if (!*str)
+		return (FALSE);
+	while (*str && ft_isdigit(*str))
+		str++;
+	if (*str)
+		return (FALSE);
+	return (TRUE);
 }

@@ -1,6 +1,6 @@
 NAME			= libft.a
 
-HEADERS_DIR		= ./includes/
+HEADERS_DIR		= ./inc/
 SOURCES_DIR		= ./sources/
 
 HEADERS_LIST	= libft.h 
@@ -27,6 +27,7 @@ SOURCES_LIST	=	ft_atoi.c \
 				ft_strncmp.c \
 				ft_strnstr.c \
 				ft_strrchr.c \
+				ft_strisdigit.c \
 				ft_tolower.c \
 				ft_toupper.c \
 				ft_substr.c \
